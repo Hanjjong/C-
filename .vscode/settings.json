@@ -59,6 +59,16 @@
         "unordered_map": "cpp",
         "variant": "cpp",
         "vector": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "filesystem": "cpp",
+        "__functional_base": "cpp",
+        "bit": "cpp",
+        "deque": "cpp",
+        "fstream": "cpp",
+        "functional": "cpp",
+        "iomanip": "cpp",
+        "iterator": "cpp",
+        "stack": "cpp",
+        "utility": "cpp"
     }
 }

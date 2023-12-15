@@ -1,13 +1,14 @@
-#include "Replacer.hpp"
+#include "Harl.hpp"
 
 int main(int argc, char *argv[])
 {
-    if (argc != 4)
+    if (argc != 2)
     {
         std::cout << "error" << std::endl;
         return (1);
     }
-    Replacer replacer(argv[1], argv[2], argv[3]);
-    replacer.replaceInFile();
+    Harl harl;
+
+    harl.complain(argv[1]);
     return (0);
 }
