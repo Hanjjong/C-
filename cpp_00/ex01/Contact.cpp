@@ -36,7 +36,7 @@ void Contact::print_contact()
 
 Contact::Contact()
 {
-
+    
 }
 Contact::~Contact()
 {
@@ -64,13 +64,23 @@ void Contact::addcontact()
 {
     std::cout << "His(her) first name is..." << std::endl;
     std::getline(std::cin, this->firstname);
+    if (std::cin.eof() == 1)
+            return ;
 	std::cout << "His(her) last name is..." << std::endl;
     std::getline(std::cin, this->lastname);
+    if (std::cin.eof() == 1)
+            return ;
 	std::cout << "His(her) nickname is..." << std::endl;
     std::getline(std::cin, this->nickname);
+    if (std::cin.eof() == 1)
+            return ;
 	std::cout << "His(her) phone number is..." << std::endl;
     std::getline(std::cin, this->p_number);
+    if (std::cin.eof() == 1)
+            return ;
 	std::cout << "His(her) darkest secret is..." << std::endl;
     std::getline(std::cin, this->secret);
+    if (std::cin.eof() == 1)
+            return ;
 	std::cout << "Save his(her) Contact." << std::endl;
 }

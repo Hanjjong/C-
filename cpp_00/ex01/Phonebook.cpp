@@ -2,12 +2,10 @@
 # include <cstdlib>
 
 PhoneBook::PhoneBook() {
-    // 생성자의 구현 내용
+    index = 0;
 }
 
-PhoneBook::~PhoneBook() {
-    // 소멸자의 구현 내용
-}
+PhoneBook::~PhoneBook() {}
 
 
 void PhoneBook::add_contact()
@@ -20,7 +18,6 @@ void PhoneBook::print_contact()
 {
     int i;
     std::string number;
-    int num;
 
     i = 0;
     if (this->index == 0)
@@ -40,20 +37,20 @@ void PhoneBook::print_contact()
             this->contacts[i].print_contact();
             i++;
         }
-        std::cout << "enter number you want" << std::endl;
-        std::getline(std::cin, number);
-        if (std::cin.fail())
+        while(!std::cin.eof())
         {
-            std::cout << "number error" << std::endl;
-            std::cin.clear();
-            std::cin.ignore(255, '\n');
-            return ;
+            std::cout << "enter number you want" << std::endl;
+            if (std::getline(std::cin, number))
+            {
+                if (number.size() == 1 && number[0] <= '8' &&  number[0] >= '1' && (atoi(number.c_str()) - 1) < this->index)
+                {
+                    this->contacts[atoi(number.c_str()) - 1].show_contact();
+                    break ;
+                }
+                else
+                    std::cout << "invalid number" << std::endl;           
+            }
         }
-        num = atoi(number.c_str());
-        num = num - 1;
-        if (num <= 7 && num >= 0 && num < this->index)
-            this->contacts[num].show_contact();
-        else
-            std::cout << "out of range" << std::endl;
+        return ;
     }
 }

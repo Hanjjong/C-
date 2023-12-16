@@ -8,7 +8,8 @@ int main(void)
 
     while (1)
     {
-        std::cout << "please enter command" << std::endl;
+        if (std::cin.eof() != 1)
+            std::cout << "please enter command" << std::endl;
         std::getline(std::cin, cmd);
         if (std::cin.eof() == 1)
             return (0);
