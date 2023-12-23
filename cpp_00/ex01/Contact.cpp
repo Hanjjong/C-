@@ -1,37 +1,12 @@
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
-Contact::Contact(std::string firstname, std::string lastname, std::string nickname, std::string p_number, std::string secret)
-{
-    this->firstname = firstname;
-    this->lastname = lastname;
-    this->nickname = nickname;
-    this->p_number = p_number;
-    this->secret = secret;
-}
-
-std::string Contact::get_firstname()
-{
-    return (this->firstname);
-}
-
-std::string Contact::get_lastname()
-{
-    return (this->lastname);
-}
-
-std::string Contact::get_nickname()
-{
-    return (this->nickname);
-}
-
-std::string Contact::get_secret()
-{
-    return (this->secret);
-}
 
 void Contact::print_contact()
 {
-    std::cout << "|" << onlytenlength(this->firstname) << "|" << onlytenlength(lastname) << "|" << onlytenlength(nickname) << std::endl;
+    std::cout << "|" << std::setw(10) << onlytenlength(this->firstname) 
+                << "|" << std::setw(10) << onlytenlength(lastname) 
+                << "|" << std::setw(10) << onlytenlength(nickname)  
+                << "|" << std::endl;
 }
 
 Contact::Contact()
@@ -57,30 +32,97 @@ std::string Contact::onlytenlength(std::string str)
 	if (str.size() > 10)
 		return (str.substr(0, 9) + ".");
 	else
-		return (std::string(10 - str.size(), ' ') + str);
+        return (str);
+}
+
+int is_space(const char *str)
+{
+    int i = 0;
+    while (str[i])
+    {
+        if (std::isspace(str[i]) == 0)
+        {
+            return 0;
+        }
+        i++;
+    }
+    return 1;
+}
+
+void    Contact::setContact(std::string firstname, std::string lastname, std::string nickname, std::string p_number, std::string secret)
+{
+    this->firstname = firstname;
+    this->lastname = lastname;
+    this->nickname = nickname;
+    this->p_number = p_number;
+    this->secret = secret;
 }
 
 void Contact::addcontact()
 {
-    std::cout << "His(her) first name is..." << std::endl;
-    std::getline(std::cin, this->firstname);
-    if (std::cin.eof() == 1)
-            return ;
-	std::cout << "His(her) last name is..." << std::endl;
-    std::getline(std::cin, this->lastname);
-    if (std::cin.eof() == 1)
-            return ;
-	std::cout << "His(her) nickname is..." << std::endl;
-    std::getline(std::cin, this->nickname);
-    if (std::cin.eof() == 1)
-            return ;
-	std::cout << "His(her) phone number is..." << std::endl;
-    std::getline(std::cin, this->p_number);
-    if (std::cin.eof() == 1)
-            return ;
-	std::cout << "His(her) darkest secret is..." << std::endl;
-    std::getline(std::cin, this->secret);
-    if (std::cin.eof() == 1)
-            return ;
+    std::string firstname;
+    std::string lastname;
+    std::string nickname;
+    std::string p_number;
+    std::string secret;
+
+    while (!std::cin.eof())
+    {
+        std::cout << "His(her) first name is..." << std::endl;
+        if (std::getline(std::cin, firstname))
+        {
+            if (is_space(firstname.c_str()) != 0)
+                continue;
+            else
+                break ;
+        }
+    }
+    while (!std::cin.eof())
+    {
+        std::cout << "His(her) last name is..." << std::endl;
+        if (std::getline(std::cin, lastname))
+        {
+            if (is_space(lastname.c_str()) != 0)
+                continue;
+            else
+                break ;
+        }
+    }
+    while (!std::cin.eof())
+    {
+        std::cout << "His(her) nickname is..." << std::endl;
+        if (std::getline(std::cin, nickname))
+        {
+            if (is_space(nickname.c_str()) != 0)
+                continue;
+            else
+                break ;
+        }
+    }
+    while (!std::cin.eof())
+    {
+        std::cout << "His(her) phone number is..." << std::endl;
+        if (std::getline(std::cin, p_number))
+        {
+            if (is_space(p_number.c_str()) != 0)
+                continue;
+            else
+                break ;
+        }
+    }
+    while (!std::cin.eof())
+    {
+        std::cout << "His(her) darkest secret is..." << std::endl;
+        if (std::getline(std::cin, secret))
+        {
+            if (is_space(secret.c_str()) != 0)
+                continue;
+            else
+                break ;
+        }
+    }
+    if (std::cin.eof())
+        return ;
+    setContact(firstname, lastname, nickname, p_number, secret);
 	std::cout << "Save his(her) Contact." << std::endl;
 }

@@ -1,5 +1,5 @@
-#include "Phonebook.hpp"
-# include <cstdlib>
+#include "PhoneBook.hpp"
+// # include <cstdlib>
 
 PhoneBook::PhoneBook() {
     index = 0;
@@ -27,10 +27,10 @@ void PhoneBook::print_contact()
     }
     else 
     {
-        std::cout 	<< "     index" << "|" 
-					<< "first name" << "|" 
-					<< " last name" << "|" 
-					<< "  nickname" << "|" << std::endl;
+        std::cout 	<< std::setw(10) << "index" << "|" 
+					<< std::setw(10) << "first name" << "|" 
+					<< std::setw(10) << "last name" << "|" 
+					<< std::setw(10) << "nickname" << "|" << std::endl;
         while (i < this->index && i < 8)
         {
             std::cout << "         " << i + 1;
@@ -42,9 +42,10 @@ void PhoneBook::print_contact()
             std::cout << "enter number you want" << std::endl;
             if (std::getline(std::cin, number))
             {
-                if (number.size() == 1 && number[0] <= '8' &&  number[0] >= '1' && (atoi(number.c_str()) - 1) < this->index)
+                int num = std::atoi(number.c_str());
+                if (number.size() == 1 && num <= 8 &&  num >= 1 && num - 1 < this->index)
                 {
-                    this->contacts[atoi(number.c_str()) - 1].show_contact();
+                    this->contacts[num - 1].show_contact();
                     break ;
                 }
                 else

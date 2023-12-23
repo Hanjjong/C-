@@ -10,7 +10,7 @@ class Replacer{
         std::string filename;
         std::string s1;
         std::string s2;
-        std::string readFileContent();
+        std::string readFileContent(int *error);
         void    writeOutfile(std::string content);
         
 
@@ -18,7 +18,6 @@ class Replacer{
         Replacer(std::string filename, std::string s1, std::string s2);
         ~Replacer();
         void    replaceInFile();
-
 };
 
 #endif

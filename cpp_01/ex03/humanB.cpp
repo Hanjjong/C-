@@ -1,4 +1,4 @@
-#include "humanB.hpp"
+#include "HumanB.hpp"
 
 void    HumanB::attack()
 {
@@ -10,4 +10,4 @@ HumanB::~HumanB(){}
 
 void    HumanB::setWeapon(Weapon &weapon){
     this->weapon = &weapon;
-}
+} 

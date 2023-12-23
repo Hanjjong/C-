@@ -10,12 +10,13 @@ Replacer::Replacer(std::string filename, std::string s1, std::string s2)
 Replacer::~Replacer()
 {}
 
-std::string Replacer::readFileContent()
+std::string Replacer::readFileContent(int *error)
 {
     std::ifstream inputFile(filename.c_str());
     if(!inputFile.is_open())
     {
         std::cerr << "file open Error" << std::endl;
+        *error = 1;
         return "";
     }
 
@@ -41,9 +42,12 @@ void    Replacer::writeOutfile(std::string content)
 
 void    Replacer::replaceInFile()
 {
-    std::string content = readFileContent();
+    int error = 0;
+    std::string content = readFileContent(&error);
 
-    int found = content.find(s1);
+    if (error == 1)
+        return ;
+    size_t found = content.find(s1);
     //s1을 찾지 못하면 엄청나게 큰 수를 반환하는데, 아래 조건으로 검사하면 된다.
     while (found != std::string::npos)
     {
