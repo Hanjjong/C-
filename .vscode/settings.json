@@ -69,6 +69,8 @@
         "iomanip": "cpp",
         "iterator": "cpp",
         "stack": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "memory_resource": "cpp",
+        "__memory": "cpp"
     }
 }

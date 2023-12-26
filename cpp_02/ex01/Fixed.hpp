@@ -2,6 +2,7 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed{
 
@@ -12,10 +13,14 @@ private:
 public:
     Fixed();
     ~Fixed();
+    Fixed(int value);
+    Fixed(float value);
     Fixed(const Fixed& origin); //복사 생성자
     Fixed& operator=(const Fixed& obj) ;
     int getRawBits( void ) const;
     void setRawBits( int const raw );
+    float toFloat(void) const;
+    int	toInt(void) const;
 };
 
 #endif

@@ -31,3 +31,19 @@ Fixed& Fixed::operator=(const Fixed& obj)
 	}
 	return (*this);
 }
+
+Fixed::Fixed(int num){
+    mvalue = num << mbit;
+}
+Fixed::Fixed(float num){
+    this->mvalue = roundf(num *(1 << mbit)) ;
+}
+
+float	Fixed::toFloat(void) const
+{
+	return ((float)mvalue / (1 << mbit)); 
+}
+int	Fixed::toInt(void) const
+{
+	return (mvalue >> mbit);
+}
