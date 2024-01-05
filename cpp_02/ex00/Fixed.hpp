@@ -12,7 +12,7 @@ private:
 public:
     Fixed();
     ~Fixed();
-    Fixed(const Fixed& origin); //복사 생성자
+    Fixed(const Fixed& origin);
     Fixed& operator=(const Fixed& obj) ;
     int getRawBits( void ) const;
     void setRawBits( int const raw );

@@ -1,20 +1,17 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed(){
-    std::cout << "Default constructor called" << std::endl;
     mvalue = 0;
 }
 Fixed::~Fixed(){
-    std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &origin){
-    std::cout << "Copy constructor called" << std::endl;
+	std::cout << "asd" << std::endl;
     this->mvalue = origin.mvalue;
 }
 
 int Fixed::getRawBits( void ) const{
-    std::cout << "getRawBits member function called" << std::endl;
     return mvalue;
 }
 
@@ -41,7 +38,6 @@ int	Fixed::toInt(void) const
 
 Fixed& Fixed::operator=(const Fixed& obj) 
 {
-	std::cout << "Assignment operator called" << std::endl;
 	if (this != &obj)
 	{
 		this->mvalue = obj.getRawBits();
@@ -85,25 +81,25 @@ Fixed	Fixed::operator+(Fixed const &ref) const
 	return (fixed);
 }
 
-Fixed	Fixed::operator-(Fixed const &ref) const
+Fixed Fixed::operator-(Fixed const &ref) const
 {
 	Fixed fixed(this->toFloat() - ref.toFloat());
 	return (fixed);
 }
 
-Fixed	Fixed::operator*(Fixed const &ref) const
+Fixed Fixed::operator*(Fixed const &ref) const
 {
 	Fixed fixed(this->toFloat() * ref.toFloat());
 	return (fixed);
 }
 
-Fixed	Fixed::operator/(Fixed const &ref) const
+Fixed Fixed::operator/(Fixed const &ref) const
 {
 	Fixed fixed(this->toFloat() / ref.toFloat());
 	return (fixed);
 }
 
-Fixed&	Fixed::operator++(void)
+Fixed& Fixed::operator++(void)
 {
 	this->mvalue++;
 	return (*this);
@@ -117,7 +113,7 @@ const Fixed	Fixed::operator++(int)
 	return (ret);
 }
 
-Fixed&	Fixed::operator--(void)
+Fixed& Fixed::operator--(void)
 {
 	this->mvalue--;
 	return (*this);
@@ -131,7 +127,7 @@ const Fixed	Fixed::operator--(int)
 	return (ret);
 }
 
-Fixed&	Fixed::min(Fixed &ref1, Fixed &ref2)
+Fixed& Fixed::min(Fixed &ref1, Fixed &ref2)
 {
 	if (ref1 <= ref2)
 		return ref1;
@@ -139,7 +135,7 @@ Fixed&	Fixed::min(Fixed &ref1, Fixed &ref2)
 		return ref2;
 }
 
-const Fixed&	Fixed::min(Fixed const &ref1, Fixed const &ref2)
+const Fixed& Fixed::min(Fixed const &ref1, Fixed const &ref2)
 {
 	if (ref1 <= ref2)
 		return ref1;
@@ -147,7 +143,7 @@ const Fixed&	Fixed::min(Fixed const &ref1, Fixed const &ref2)
 		return ref2;
 }
 
-Fixed&	Fixed::max(Fixed &ref1, Fixed &ref2)
+Fixed& Fixed::max(Fixed &ref1, Fixed &ref2)
 {
 	if (ref1 >= ref2)
 		return ref1;
@@ -155,7 +151,7 @@ Fixed&	Fixed::max(Fixed &ref1, Fixed &ref2)
 		return ref2;
 }
 
-const Fixed&	Fixed::max(Fixed const &ref1, Fixed const &ref2)
+const Fixed& Fixed::max(Fixed const &ref1, Fixed const &ref2)
 {
 	if (ref1 >= ref2)
 		return ref1;

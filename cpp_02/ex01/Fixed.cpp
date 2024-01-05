@@ -29,7 +29,7 @@ void  Fixed::setRawBits(const int raw){
 //setter
 
 Fixed& Fixed::operator=(const Fixed& obj) {
-	std::cout << "Assignment operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &obj)
 	{
 		this->mvalue = obj.getRawBits();
@@ -51,7 +51,7 @@ Fixed::Fixed(float num){
 //constructor (float parameter)
 
 float	Fixed::toFloat(void) const {
-	return ((float)mvalue / (1 << mbit)); 
+	return ((float) mvalue / (1 << mbit)); 
 }
 
 int	Fixed::toInt(void) const {
