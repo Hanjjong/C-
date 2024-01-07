@@ -30,7 +30,22 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
     hitPoints = 100;
     energyPoints = 50;
     attackDamage = 20;
-    std::cout << "ScavTrap " << name << "이 생성되었습니다." << std::endl; 
+    std::cout << "ScavTrap " << name << "이 생성되었습니다!" << std::endl; 
+}
+
+void ScavTrap::attack(const std::string& target)
+{
+    if (hitPoints <= 0){
+        std::cout << "[ScavTrap] " << "체력(hit point)이 0입니다." << std::endl;
+        return ;
+    }
+    if (energyPoints >= 1){
+        std::cout << "[ScavTrap] " << name << "이 " << target << "을(를) 공격하여 " << attackDamage << " 포인트의 피해를 입힙니다!" << std::endl;
+        energyPoints--;
+    }
+    else {
+        std::cout << "[ScavTrap] " << "에너지 부족으로 공격할 수 없습니다." << std::endl;
+    }
 }
 
 void ScavTrap::guardGate(){

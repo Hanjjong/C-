@@ -34,6 +34,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name){
     std::cout << "ScavTrap " << name << "이 생성되었습니다." << std::endl;
 }
 
+
 void FragTrap::highFivesGuys(void){
     std::cout << name << "HighFive!!!!!!!!" << std::endl;
 }

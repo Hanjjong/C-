@@ -37,15 +37,15 @@ int ClapTrap::getHitPoint(){
 void ClapTrap::attack(const std::string& target)
 {
     if (hitPoints <= 0){
-        std::cout << "체력(hit point)이 0입니다." << std::endl;
+        std::cout << "[ClapTrap] " << "체력(hit point)이 0입니다." << std::endl;
         return ;
     }
     if (energyPoints >= 1){
-        std::cout << name << "이 " << target << "을(를) 공격하여 " << attackDamage << " 포인트의 피해를 입힙니다!" << std::endl;
+        std::cout << "[ClapTrap] " << name << "이 " << target << "을(를) 공격하여 " << attackDamage << " 포인트의 피해를 입힙니다!" << std::endl;
         energyPoints--;
     }
     else {
-        std::cout << "에너지 부족으로 공격할 수 없습니다." << std::endl;
+        std::cout << "[ClapTrap] "  << "에너지 부족으로 공격할 수 없습니다." << std::endl;
     }
 }
 
