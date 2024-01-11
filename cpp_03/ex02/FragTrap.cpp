@@ -4,7 +4,7 @@
 FragTrap::FragTrap(){}
 
 FragTrap::~FragTrap(){
-    std::cout << "ScavTrap " << name << "이 파괴되었습니다." << std::endl;
+    std::cout << "FragTrap " << name << "이 파괴되었습니다." << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& origin)
@@ -31,11 +31,11 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name){
     hitPoints = 100;
     energyPoints = 100;
     attackDamage = 30;
-    std::cout << "ScavTrap " << name << "이 생성되었습니다." << std::endl;
+    std::cout << "FragTrap " << name << "이 생성되었습니다." << std::endl;
 }
 
 
 void FragTrap::highFivesGuys(void){
-    std::cout << name << "HighFive!!!!!!!!" << std::endl;
+    std::cout << name << " HighFive!!!!!!!!" << std::endl;
 }
 

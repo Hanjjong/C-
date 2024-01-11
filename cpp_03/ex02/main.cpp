@@ -28,6 +28,20 @@ int main(void)
     scavtrap.attack("적군 A");
     scavtrap.beRepaired(9);
     scavtrap.guardGate();
+    std::cout << "===============================================" << std::endl;
 //-------------------------------------------
+
+    FragTrap fragtrap("PAPER MAN");
+
+    fragtrap.attack("적군 A");
+    fragtrap.takeDamage(9);
+    fragtrap.beRepaired(9);
+    std::cout << "----체력" << fragtrap.getHitPoint() << std::endl;
+    fragtrap.takeDamage(1000);
+    std::cout << "----체력" << fragtrap.getHitPoint() << std::endl;
+    fragtrap.attack("적군 A");
+    fragtrap.beRepaired(9);
+    fragtrap.highFivesGuys();
+    std::cout << "===============================================" << std::endl;
     return 0;
 }
