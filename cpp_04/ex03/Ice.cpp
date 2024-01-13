@@ -1,6 +1,6 @@
 #include "Ice.hpp"
 
-Ice::Ice() : AMateria("Ice")
+Ice::Ice() : AMateria("ice")
 {
 }
 
@@ -28,3 +28,8 @@ AMateria *Ice::clone() const
 	return p;
 }
 
+// void Ice::use(ICharacter &target)
+// {
+//     if (!this->getType().compare("ice"))
+// 		std::cout << "* shoots an ice bolt at "<< target.getName() << " *"<< std::endl;
+// }

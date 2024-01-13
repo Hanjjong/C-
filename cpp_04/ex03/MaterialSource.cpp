@@ -41,8 +41,10 @@ void MateriaSource::learnMateria(AMateria *m)
     for (int i = 0; i < 4; i++)
     {
         if (!this->slot[i])
+        {
             this->slot[i] = m;
-        return ;
+            return ;
+        }
     }
 }
 
@@ -50,7 +52,7 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (this->slot[i] && this->slot[i]->getType().compare(type))
+        if (this->slot[i] && !this->slot[i]->getType().compare(type))
             return this->slot[i]->clone();
     }
     return 0;

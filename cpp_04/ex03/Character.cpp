@@ -7,7 +7,7 @@ Character::Character()
 
 Character::Character(std::string name) : name(name)
 {
-	// std::cout << "Character " << name << " constructor called" << std::endl;
+	std::cout << "Character " << name << " constructor called" << std::endl;
 	for(int i = 0; i < 4; i++)
 		this->inventory[i] = 0;
 }
@@ -71,5 +71,7 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter &target)
 {
     if (inventory[idx])
+    {
         inventory[idx]->use(target);
+    }
 }

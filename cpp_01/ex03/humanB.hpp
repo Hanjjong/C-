@@ -9,6 +9,7 @@ class HumanB{
         std::string name;
     public:
         HumanB(std::string name);
+        HumanB();
         ~HumanB();
         void    attack();
         void    setWeapon(Weapon &weapon);

@@ -1,6 +1,6 @@
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("Cure")
+Cure::Cure() : AMateria("cure")
 {
 }
 
@@ -20,7 +20,6 @@ const Cure &Cure::operator=(const Cure &obj)
         this->type = obj.type;
     }
     return (*this);
-    // TODO: insert return statement here
 }
 
 AMateria *Cure::clone() const
@@ -29,3 +28,8 @@ AMateria *Cure::clone() const
 	return p;
 }
 
+// void Cure::use(ICharacter &target)
+// {
+//     if (!this->getType().compare("cure"))
+// 		std::cout << "* heals "<< target.getName() << "'s wounds *" << std::endl;
+// }
