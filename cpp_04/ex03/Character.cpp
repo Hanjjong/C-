@@ -36,7 +36,7 @@ Character &Character::operator=(const Character &obj)
 		{
 			if (this->inventory[i])
 				delete this->inventory[i];
-			this->inventory[i] = obj.inventory[i];
+			this->inventory[i] = obj.inventory[i]->clone();
 		}
     }
     return (*this);
@@ -70,8 +70,16 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
-    if (inventory[idx])
+    if (idx >= 4)
+        return ;
+    if (this->inventory[idx])
     {
         inventory[idx]->use(target);
     }
+}
+
+AMateria* Character::getMateria(int idx) const
+{
+    if (inventory[idx])
+        return inventory[idx];
 }

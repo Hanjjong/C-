@@ -1,7 +1,7 @@
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
-AMateria::AMateria()
+AMateria::AMateria() : type("Unknown")
 {
     std::cout << "AMateria default constructor called" << std::endl;
 }
@@ -40,7 +40,7 @@ std::string const &AMateria::getType() const
 void AMateria::use(ICharacter &target)
 {
     if (!this->getType().compare("ice"))
-		std::cout << "* shoots an ice bolt at "<< target.getName() << " *"<< std::endl;
-	else if (!this->getType().compare("cure"))
-		std::cout << "* heals "<< target.getName() << "'s wounds *" << std::endl;
+        std::cout << "* shoots an ice bolt at "<< target.getName() << " *"<< std::endl;
+    else if (!this->getType().compare("cure"))
+        std::cout << "* heals "<< target.getName() << "'s wounds *" << std::endl;
 }
