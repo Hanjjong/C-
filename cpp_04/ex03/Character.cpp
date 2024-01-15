@@ -82,4 +82,5 @@ AMateria* Character::getMateria(int idx) const
 {
     if (inventory[idx])
         return inventory[idx];
+    return 0;
 }

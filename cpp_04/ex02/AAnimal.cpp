@@ -22,10 +22,6 @@ AAnimal& AAnimal::operator=(const AAnimal& obj)
 	return (*this);
 }
 
-void    AAnimal::makeSound() const {
-    std::cout << "i'm animal" << std::endl;
-}
-
 const std::string& AAnimal::getType() const {
     return (this->type);
 } 
