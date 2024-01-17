@@ -1,20 +1,16 @@
 #include "Character.hpp"
+#include "AMateria.hpp"
 
-Character::Character()
-{
-    // std::cout << "Character default constructor called" << std::endl;
-}
+Character::Character(){}
 
 Character::Character(std::string name) : name(name)
 {
-	std::cout << "Character " << name << " constructor called" << std::endl;
 	for(int i = 0; i < 4; i++)
 		this->inventory[i] = 0;
 }
 
 Character::~Character()
 {
-    // std::cout << "Character descontructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
     {
 		if (this->inventory[i])
@@ -24,6 +20,8 @@ Character::~Character()
 
 Character::Character(const Character &origin)
 {
+    for(int i = 0; i < 4; i++)
+		this->inventory[i] = 0;
     (*this) = origin;
 }
 

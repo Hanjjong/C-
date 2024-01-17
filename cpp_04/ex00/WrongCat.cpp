@@ -26,7 +26,7 @@ WrongCat &WrongCat::operator=(const WrongCat &obj)
 	return (*this);
 }
 
-void WrongCat::makeSound(void)
+void WrongCat::makeSound(void) const
 {
     std::cout << "cat can't barking" << std::endl;
 }

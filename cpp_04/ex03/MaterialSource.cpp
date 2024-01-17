@@ -9,6 +9,8 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource& origin)
 {
+    for(int i = 0; i < 4; i++)
+		this->slot[i] = 0;
     // std::cout << "MateriaSource Copy constructor called" << std::endl;
 	(*this) = origin;
 }
@@ -19,8 +21,8 @@ MateriaSource& MateriaSource::operator=(const MateriaSource  &obj)
     {
         for (int i = 0; i < 4; i++)
 		{
-			// if (this->slot[i])
-				// delete this->slot[i];
+			if (this->slot[i])
+				delete this->slot[i];
 			this->slot[i] = obj.slot[i];
 		}
     }

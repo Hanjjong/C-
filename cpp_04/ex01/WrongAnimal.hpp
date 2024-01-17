@@ -12,7 +12,7 @@ class WrongAnimal{
         WrongAnimal(std::string type);
         WrongAnimal(const WrongAnimal& origin);
         WrongAnimal& operator=(const WrongAnimal& obj);
-        void makeSound();
+        void makeSound() const;
         const std::string& getType() const;
 };
 

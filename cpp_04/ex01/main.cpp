@@ -30,7 +30,7 @@ int main()
     std::cout <<"------------------origin--------------" <<std::endl;
     std::cout << "dog==============================" << std::endl;
     for (int i = 0; i < 10; i++)
-        std::cout << dog.getBrain()->getIdea(i) << std::endl;
+        std::cout << dog.getBrain()->getIdea(i) << std::endl;    
     std::cout <<"copy dog===============================" << std::endl;
     for (int i = 0; i < 10; i++)
         std::cout << copyDog.getBrain()->getIdea(i) << std::endl;

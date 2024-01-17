@@ -14,6 +14,8 @@ Brain::~Brain()
 
 Brain::Brain(const Brain &origin)
 {
+    for (int i = 0; i < 100; i++)
+		this->ideas[i] = "i'm brain...";
     (*this) = origin;
     std::cout << "Brain이 생성되었습니다." << std::endl;
 }
