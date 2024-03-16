@@ -2,7 +2,8 @@
 
 std::ostream& operator<<(std::ostream &out, Bureaucrat &bureaucrat)
 {
-    out << bureaucrat.getName() + ",  bureaucrat grade" + std::to_string(bureaucrat.getGrade());
+    out << bureaucrat.getName() + ",  bureaucrat grade" + " ";
+	out << bureaucrat.getGrade();
     return out;
 }
 
@@ -34,7 +35,7 @@ int main()
 		// std::cout << std::endl;
 
 		a.incGrade();
-		b.incGrade();
+		// b.incGrade();
 		std::cout << a << std::endl;
 		std::cout << b << std::endl;
 		std::cout << std::endl;

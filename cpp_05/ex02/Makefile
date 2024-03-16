@@ -1,6 +1,6 @@
 NAME = Bureaucrat
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp
 
 RM = rm -rf
 
