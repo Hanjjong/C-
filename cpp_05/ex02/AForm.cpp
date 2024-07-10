@@ -18,12 +18,21 @@ AForm::~AForm(){}
 
 AForm &AForm::operator=(const AForm &obj)
 {
+    if (this != &obj)
+    {
+        this->_sign = obj._sign;
+    }
     return *this;
 }
 
 const char *AForm::GradeTooHighException::what() const throw()
 {
     return "GradeTooHigh...";
+}
+
+const char *AForm::FormNotSignedException::what() const throw()
+{
+    return "FormNotSigned...";
 }
 
 const char *AForm::GradeTooLowException::what() const throw()
@@ -58,6 +67,7 @@ void AForm::beSigned(const Bureaucrat &bureaucrat)
     _sign = true;
 }
 
-void AForm::execute(Bureaucrat const &executer) const
+bool AForm::isSigned() const 
 {
+    return _sign;
 }

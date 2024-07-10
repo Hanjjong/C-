@@ -1,4 +1,8 @@
+#include <iostream>
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 std::ostream& operator<<(std::ostream &out, Bureaucrat &bureaucrat)
 {
@@ -6,58 +10,42 @@ std::ostream& operator<<(std::ostream &out, Bureaucrat &bureaucrat)
     return out;
 }
 
-int main()
-{
-    try
-	{
-		try
-		{
-			Bureaucrat test("test", 200);	
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
+int main() {
+    try {
+        Bureaucrat john("John", 1); // 높은 등급의 Bureaucrat
+        Bureaucrat mike("Mike", 150); // 낮은 등급의 Bureaucrat
 
-		Bureaucrat a("A breaucrat", 150);
-		Bureaucrat b("B breaucrat", 1);
+        ShrubberyCreationForm shrubbery("home");
+        RobotomyRequestForm robotomy("robot");
+        PresidentialPardonForm pardon("criminal");
 
-		std::cout << a << std::endl;
-		std::cout << b << std::endl;
-		std::cout << std::endl;
+        std::cout << std::endl;
 
-		// a.descGrade();
-		// b.descGrade();
+        // ShrubberyCreationForm 테스트
+        std::cout << "Testing ShrubberyCreationForm:" << std::endl;
+        john.signForm(shrubbery);
+        john.executeForm(shrubbery);
+        std::cout << std::endl;
 
-		// std::cout << a << std::endl;
-		// std::cout << b << std::endl;
-		// std::cout << std::endl;
+        // RobotomyRequestForm 테스트
+        std::cout << "Testing RobotomyRequestForm:" << std::endl;
+        john.signForm(robotomy);
+        john.executeForm(robotomy);
+        std::cout << std::endl;
 
-		a.incGrade();
-		// b.incGrade();
-		std::cout << a << std::endl;
-		std::cout << b << std::endl;
-		std::cout << std::endl;
+        // PresidentialPardonForm 테스트
+        std::cout << "Testing PresidentialPardonForm:" << std::endl;
+        john.signForm(pardon);
+        john.executeForm(pardon);
+        std::cout << std::endl;
 
+        // 낮은 등급 Bureaucrat 테스트
+        std::cout << "Testing with low grade Bureaucrat:" << std::endl;
+        mike.signForm(shrubbery); // 서명 실패 예상
+        mike.executeForm(shrubbery); // 실행 실패 예상
+    } catch (const std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
 
-		try
-		{
-			Form	form("사직서", false, 100, 10);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-		Form	form("사직서", false, 100, 10);
-		a.signForm(form);
-		
-
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
-	return (0);
+    return 0;
 }
-

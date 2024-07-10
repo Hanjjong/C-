@@ -38,8 +38,6 @@ int main()
 		std::cout << a << std::endl;
 		std::cout << b << std::endl;
 		std::cout << std::endl;
-
-
 		try
 		{
 			Form	form("사직서", false, 100, 10);
@@ -50,14 +48,11 @@ int main()
 		}
 		Form	form("사직서", false, 100, 10);
 		a.signForm(form);
-		
-
-	}
+		}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
 	return (0);
 }
 

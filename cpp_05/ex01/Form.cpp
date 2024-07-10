@@ -18,6 +18,10 @@ Form::~Form(){}
 
 Form &Form::operator=(const Form &obj)
 {
+    if (this != &obj)
+    {
+        this->_sign = obj._sign;
+    }
     return *this;
 }
 

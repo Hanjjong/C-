@@ -1,13 +1,14 @@
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(){}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
     if (grade > 150)
-        throw GradeTooHighException();
-    else if (grade < 1)
         throw GradeTooLowException();
+    else if (grade < 1)
+        throw GradeTooHighException();
     _grade = grade;
 }
 
@@ -58,7 +59,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
     return "GradeTooLow...";
 }
 
-void Bureaucrat::signForm(Form& f)
+void Bureaucrat::signForm(AForm& f)
 {
     try
     {
@@ -68,6 +69,19 @@ void Bureaucrat::signForm(Form& f)
     catch(const std::exception& e)
     {
         std::cout << this->_name << " couldn't sign " << f.getName() << " because " << e.what() << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+    try 
+    {
+        form.execute(*this); // 현재 객체를 전달하기 위해 *this 사용
+        std::cout << _name << " executed " << form.getName() << std::endl;
+    }
+    catch (const std::exception& e) 
+    {
+        std::cout << _name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
     }
 }
 
