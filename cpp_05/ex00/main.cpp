@@ -3,7 +3,7 @@
 std::ostream& operator<<(std::ostream &out, Bureaucrat &bureaucrat)
 {
     out << bureaucrat.getName() + ",  bureaucrat grade" + " ";
-	out << bureaucrat.getGrade();
+	out << bureaucrat.getGrade() << ".";
     return out;
 }
 
