@@ -13,7 +13,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &origin) : _name(origin.getName()), _grade(origin.getGrade()) {}
 
-const Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
 {
     if (this != &obj)
     {

@@ -6,8 +6,17 @@
 
 std::ostream& operator<<(std::ostream &out, Bureaucrat &bureaucrat)
 {
-    out << bureaucrat.getName() + ",  bureaucrat grade" + std::to_string(bureaucrat.getGrade());
+    out << bureaucrat.getName() + ", bureaucrat grade " << bureaucrat.getGrade();
     return out;
+}
+
+std::ostream& operator<<(std::ostream &out, AForm &form)
+{
+	out << "Form : " + form.getName();
+	out << " Signed : " << form.getSign(); 
+	out << " SignGrade : " << form.getSignGrade();
+	out << " ExecGrade : " << form.getExecGrade();
+	return out;
 }
 
 int main() {
@@ -18,8 +27,6 @@ int main() {
         ShrubberyCreationForm shrubbery("home");
         RobotomyRequestForm robotomy("robot");
         PresidentialPardonForm pardon("criminal");
-
-        std::cout << std::endl;
 
         // ShrubberyCreationForm 테스트
         std::cout << "Testing ShrubberyCreationForm:" << std::endl;
@@ -35,7 +42,7 @@ int main() {
 
         // PresidentialPardonForm 테스트
         std::cout << "Testing PresidentialPardonForm:" << std::endl;
-        john.signForm(pardon);
+        // john.signForm(pardon);
         john.executeForm(pardon);
         std::cout << std::endl;
 

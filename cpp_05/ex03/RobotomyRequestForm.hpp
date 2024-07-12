@@ -18,4 +18,5 @@ public:
     virtual void execute(Bureaucrat const &executor) const;
 };
 
+
 #endif

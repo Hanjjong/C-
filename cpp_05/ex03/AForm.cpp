@@ -7,9 +7,9 @@ AForm::AForm(std::string name, bool sign, int signGrade, int execGrade)
     : _name(name), _sign(sign), _signGrade(signGrade), _execGrade(execGrade)
 {
     if (_signGrade > 150 || _execGrade > 150)
-        throw GradeTooLowException();
-    else if (_signGrade < 1 || _execGrade < 1)
         throw GradeTooHighException();
+    else if (_signGrade < 1 || _execGrade < 1)
+        throw GradeTooLowException();
 }
 
 AForm::AForm(AForm &origin) : _name(origin._name), _sign(origin._sign), _signGrade(origin._signGrade), _execGrade(origin._execGrade) {}

@@ -2,8 +2,17 @@
 
 std::ostream& operator<<(std::ostream &out, Bureaucrat &bureaucrat)
 {
-    out << bureaucrat.getName() + ",  bureaucrat grade" + std::to_string(bureaucrat.getGrade());
+    out << bureaucrat.getName() + ", bureaucrat grade " << bureaucrat.getGrade();
     return out;
+}
+
+std::ostream& operator<<(std::ostream &out, Form &form)
+{
+	out << "Form : " + form.getName();
+	out << " Signed : " << form.getSign(); 
+	out << " SignGrade : " << form.getSignGrade();
+	out << "ExecGrade : " << form.getExecGrade();
+	return out;
 }
 
 int main()
@@ -12,11 +21,11 @@ int main()
 	{
 		try
 		{
-			Bureaucrat test("test", 200);	
+			Form form("사직서", false, 200, -1);
 		}
 		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << std::endl;
+			std::cerr << e.what() << '\n';
 		}
 
 		Bureaucrat a("A breaucrat", 150);
@@ -26,29 +35,11 @@ int main()
 		std::cout << b << std::endl;
 		std::cout << std::endl;
 
-		// a.descGrade();
-		// b.descGrade();
-
-		// std::cout << a << std::endl;
-		// std::cout << b << std::endl;
-		// std::cout << std::endl;
-
-		a.incGrade();
-		// b.incGrade();
-		std::cout << a << std::endl;
-		std::cout << b << std::endl;
-		std::cout << std::endl;
-		try
-		{
-			Form	form("사직서", false, 100, 10);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-		Form	form("사직서", false, 100, 10);
+		
+		Form form("사직서", false, 100, 10);
 		a.signForm(form);
-		}
+		b.signForm(form);
+	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';

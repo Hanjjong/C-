@@ -7,9 +7,9 @@ Form::Form(std::string name, bool sign, int signGrade, int execGrade)
     : _name(name), _sign(sign), _signGrade(signGrade), _execGrade(execGrade)
 {
     if (_signGrade > 150 || _execGrade > 150)
-        throw GradeTooHighException();
-    else if (_signGrade < 1 || _execGrade < 1)
         throw GradeTooLowException();
+    else if (_signGrade < 1 || _execGrade < 1)
+        throw GradeTooHighException();
 }
 
 Form::Form(Form &origin) : _name(origin._name), _sign(origin._sign), _signGrade(origin._signGrade), _execGrade(origin._execGrade) {}
@@ -58,6 +58,6 @@ int Form::getExecGrade() const
 void Form::beSigned(const Bureaucrat &bureaucrat)
 {
     if (bureaucrat.getGrade() > this->_signGrade)
-        throw GradeTooLowException();
+        throw Form::GradeTooLowException();
     _sign = true;
 }
