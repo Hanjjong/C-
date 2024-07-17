@@ -4,14 +4,21 @@ Serializer::~Serializer(){}
 
 Serializer::Serializer(){}
 
-Serializer::Serializer(const Serializer &origin){}
+Serializer::Serializer(const Serializer &origin){
+    (void)origin;
+}
 
-Serializer& Serializer::operator=(const Serializer &obj){}
+Serializer& Serializer::operator=(const Serializer &obj){
+    if(this != &obj){
+        ;
+    }
+    return (*this);
+}
 
-static uintptr_t serialize(Data* ptr){
+uintptr_t Serializer::serialize(Data* ptr){
     return reinterpret_cast<uintptr_t>(ptr);
 }
 
-static Data* deserialize(uintptr_t raw){
+Data* Serializer::deserialize(uintptr_t raw){
     return reinterpret_cast<Data *>(raw);
 }
