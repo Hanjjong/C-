@@ -1,6 +1,6 @@
-NAME = Base
+NAME = whatever
 
-SRCS = main.cpp A.cpp B.cpp C.cpp Base.cpp
+SRCS = main.cpp
 
 RM = rm -rf
 
