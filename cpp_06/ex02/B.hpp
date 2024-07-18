@@ -3,14 +3,8 @@
 
 #include "Base.hpp"
 
-class B
-{
-private:
-    /* data */
-public:
-    B(/* args */);
-    ~B();
-};
+class B : public Base
+{};
 
 
 

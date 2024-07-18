@@ -1,14 +1,14 @@
 #ifndef BASE_HPP
 #define BASE_HPP
 
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
 class Base
 {
-private:
-    /* data */
 public:
-    Base(/* args */);
-    ~Base();
+    virtual ~Base();
 };
-
 
 #endif

@@ -1,6 +1,6 @@
-NAME = Serializer
+NAME = Base
 
-SRCS = main.cpp Serializer.cpp
+SRCS = main.cpp A.cpp B.cpp C.cpp Base.cpp
 
 RM = rm -rf
 
