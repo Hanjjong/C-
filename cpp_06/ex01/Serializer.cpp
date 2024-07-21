@@ -16,6 +16,9 @@ Serializer& Serializer::operator=(const Serializer &obj){
 }
 
 uintptr_t Serializer::serialize(Data* ptr){
+
+    std::cout << reinterpret_cast<uintptr_t>(ptr) << std::endl;
+    std::cout << static_cast<void *>(&ptr) << std::endl;
     return reinterpret_cast<uintptr_t>(ptr);
 }
 
