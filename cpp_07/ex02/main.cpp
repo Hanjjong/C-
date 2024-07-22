@@ -1,8 +1,10 @@
 #include "Array.hpp"
 #include <iostream>
+#include <vector>
 
 int main() {
     try {
+        
         Array<int> arr1;  // 빈 배열 생성
         Array<int> arr2(5);  // 크기가 5인 배열 생성
 
