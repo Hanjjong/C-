@@ -1,6 +1,6 @@
-NAME = span
+NAME = mutantstack
 
-SRCS = main.cpp Span.cpp
+SRCS = main.cpp
 
 RM = rm -rf
 
