@@ -33,7 +33,10 @@ class MutantStack : public std::stack<T> {
             return this->c.end();
         }
         const_reverse_iterator crbegin(){
-            return this->c.crbegin;
+            return this->c.crbegin();
+        }
+        const_reverse_iterator r(){
+            return this->c.crbegin();
         }
 };
 
