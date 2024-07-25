@@ -22,22 +22,22 @@ class MutantStack : public std::stack<T> {
         };
         const_iterator cbegin(){
             return this->c.cbegin();
-        }
+        };
         const_iterator cend(){
             return this->c.cend();
-        }
+        };
         reverse_iterator rbegin(){
-            return this->c.rbegin()
-        }
-        reverse_iterator cend(){
+            return this->c.rbegin();
+        };
+        reverse_iterator rend(){
             return this->c.end();
-        }
+        };
         const_reverse_iterator crbegin(){
             return this->c.crbegin();
-        }
-        const_reverse_iterator r(){
-            return this->c.crbegin();
-        }
+        };
+        const_reverse_iterator crend(){
+            return this->c.crend();
+        };
 };
 
 #endif
