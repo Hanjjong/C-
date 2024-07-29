@@ -10,6 +10,12 @@ class MutantStack : public std::stack<T> {
     public : 
         MutantStack(){}
         ~MutantStack(){}
+        MutantStack(const MutantStack& origin) {this == &origin;}
+        MutantStack& operator=(const MutantStack& obj){
+            if (this != &obj)
+                *this = obj;
+            return *this;
+        }
         typedef typename MutantStack<T>::container_type::iterator               iterator;
         typedef typename MutantStack<T>::container_type::const_iterator         const_iterator;
         typedef typename MutantStack<T>::container_type::reverse_iterator       reverse_iterator;
@@ -30,7 +36,7 @@ class MutantStack : public std::stack<T> {
             return this->c.rbegin();
         };
         reverse_iterator rend(){
-            return this->c.end();
+            return this->c.rend();
         };
         const_reverse_iterator crbegin(){
             return this->c.crbegin();
