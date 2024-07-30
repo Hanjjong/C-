@@ -14,8 +14,14 @@ class Span{
         ~Span();
         Span(const Span& origin);
         Span& operator=(const Span& obj);
-        void addNumber(int n);
-        void addNumbers(int begin, int end);
+        void addNumber(unsigned int n);
+        template <typename InputIterator>
+        void addNumbers(InputIterator begin, InputIterator end)
+        {
+            if (std::distance(begin, end) > static_cast<int>(this->size - this->vec.size()))
+                throw CannotAddNumberException();
+            this->vec.insert(this->vec.end(), begin, end);
+        }
         int shortestSpan();
         int longestSpan();
     class CannotAddNumberException : public std::exception{

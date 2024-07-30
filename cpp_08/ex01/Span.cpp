@@ -21,22 +21,11 @@ Span::Span(unsigned int N)
     this->size = N;
 }
 
-void Span::addNumber(int n)
+void Span::addNumber(unsigned int n)
 {
     if (this->vec.size() == size)
         throw CannotAddNumberException();
     vec.push_back(n);
-}
-
-void Span::addNumbers(int begin, int end)
-{
-    if (this->vec.size() == this->size)
-        throw CannotAddNumberException();
-    for (int i = begin; i <= end; i++){
-        if (this->vec.size() == this->size)
-            throw CannotAddNumberException();
-        vec.push_back(i);
-    }
 }
 
 int Span::shortestSpan()
