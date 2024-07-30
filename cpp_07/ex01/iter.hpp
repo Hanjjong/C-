@@ -9,10 +9,11 @@ void iter(T *array, int size, F f){
         f(array[i]);
     }
 }
+//(void *)(f)(int&)
 
 template <typename T>
-void printElement(T& elemenmt){
-    std::cout << elemenmt << " ";
+void printElement(T& element){
+    std::cout << element << " ";
 }
 
 #endif

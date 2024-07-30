@@ -1,11 +1,24 @@
 #include "Span.hpp"
 
-Span::Span()
+Span::Span() : size(0) {}
+
+Span::~Span() {}
+
+Span::Span(const Span &origin) : vec(origin.vec), size(origin.size) {}
+
+Span &Span::operator=(const Span &obj)
 {
+    if(this != &obj){
+        this->vec = obj.vec;
+        this->size = obj.size;
+    }
+    return *this;
 }
 
-Span::~Span()
+Span::Span(unsigned int N)
 {
+    this->vec.reserve(N);
+    this->size = N;
 }
 
 void Span::addNumber(int n)
@@ -14,6 +27,7 @@ void Span::addNumber(int n)
         throw CannotAddNumberException();
     vec.push_back(n);
 }
+
 void Span::addNumbers(int begin, int end)
 {
     if (this->vec.size() == this->size)
@@ -48,12 +62,6 @@ int Span::longestSpan()
     }
     return (*std::max_element(vec.begin(), vec.end()) 
         - *std::min_element(vec.begin(), vec.end()));
-}
-
-Span::Span(unsigned int N)
-{
-    this->vec.reserve(N);
-    this->size = N;
 }
 
 const char *Span::CannotAddNumberException::what() const throw()

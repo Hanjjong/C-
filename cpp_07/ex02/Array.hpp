@@ -12,8 +12,12 @@ class Array
     public:
         Array() : elements(0), arraySize(0) {}
 
-        Array(unsigned int n) : arraySize (n){
+        Array(unsigned int n) : arraySize (n) {
             elements = new T[n];
+        }
+
+        ~Array(){
+            delete[] elements;
         }
 
         Array(const Array& obj) : arraySize(obj.arraySize) {
@@ -26,7 +30,6 @@ class Array
         Array& operator=(const Array& other) {
             if (this != &other) {
                 delete[] elements;
-
                 arraySize = other.arraySize;
                 elements = new T[arraySize];
                 for (unsigned int i = 0; i < arraySize; ++i) {
@@ -34,10 +37,6 @@ class Array
                 }
             }
             return *this;
-        }
-
-        ~Array(){
-            delete[] elements;
         }
 
         T& operator[](unsigned int index) {
