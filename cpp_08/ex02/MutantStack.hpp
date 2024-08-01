@@ -27,24 +27,24 @@ class MutantStack : public std::stack<T> {
         iterator end(){
             return this->c.end();
         };
-        const_iterator cbegin(){
+        const_iterator cbegin() const {
             return this->c.begin();
         };
-        // const_iterator cend(){
-        //     return this->c.cend();
-        // };
+        const_iterator cend() const{
+            return this->c.end();
+        };
         reverse_iterator rbegin(){
             return this->c.rbegin();
         };
         reverse_iterator rend(){
             return this->c.rend();
         };
-        // const_reverse_iterator crbegin(){
-        //     return this->c.crbegin();
-        // };
-        // const_reverse_iterator crend(){
-        //     return this->c.crend();
-        // };
+        const_reverse_iterator crbegin() const {
+            return this->c.rbegin();
+        };
+        const_reverse_iterator crend() const {
+            return this->c.rend();
+        };
 };
 
 #endif
