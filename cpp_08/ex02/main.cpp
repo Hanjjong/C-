@@ -50,5 +50,9 @@ int main()
         std::cout << *lit << std::endl;
         ++lit;
     }
+
+    std::list<int>::const_iterator cb = mlist.cbegin();
+    std::cout << *cb << "\n";
+    // *cb = 3;
     return 0;
 }
