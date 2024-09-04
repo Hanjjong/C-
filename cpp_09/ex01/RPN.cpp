@@ -3,6 +3,21 @@
 #include <string>
 #include <sstream>
 
+RPN::~RPN(){}
+
+RPN::RPN(){}
+
+RPN::RPN(const RPN& origin) {
+    (void)origin;
+}
+
+RPN &RPN::operator=(const RPN &obj) {
+    if(this != &obj){
+        ;
+    }
+    return (*this);
+}
+
 int RPN::evaluate(const std::string &expression)
 {
     std::stack<int> stack;
@@ -10,6 +25,8 @@ int RPN::evaluate(const std::string &expression)
     std::string token;
 
     while (iss >> token) {
+        if (token.length() != 1)
+            throw std::runtime_error("Error");
         if (std::isdigit(token[0])) {
             stack.push(std::stoi(token));
         } else if (isOperator(token)) {
@@ -32,7 +49,10 @@ int RPN::evaluate(const std::string &expression)
     return stack.top();
 }
 
-bool RPN::isOperator(const std::string &token) {
+
+
+bool RPN::isOperator(const std::string &token)
+{
     return token == "+" || token == "-" || token == "*" || token == "/";
 }
 
