@@ -1,5 +1,6 @@
 #include "PmergeMe.hpp"
 
+//./PmergeMe `jot -r 10 1 20 | tr '\n' ' '` > a.txt
 static void checkArgument(int ac) {
     if (ac < 2)
         throw std::invalid_argument("Error: invalid input");
