@@ -12,6 +12,7 @@ private:
     std::vector<int> vec;
     std::deque<int> deq;
     std::vector<int> jacobsthal;
+    std::vector<int> remainNumbers;
     int size;
 
 public:
