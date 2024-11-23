@@ -1,0 +1,25 @@
+Before: 19 9 8 1 10 18 20 11 5 
+1: 19 9 8 1 10 18 20 11 5 
+2: 19 9 8 1 18 10 20 11 5 
+4: 19 9 8 1 20 11 18 10 5 
+vec : 20 11 18 10 19 9 8 1 5 
+size: 4
+start end 1 0
+finish: 5 19 9 8 1 20 11 18 10 
+remainingNumbers : 
+vec : 5 19 9 8 1 20 11 18 10 
+size: 2
+start end 1 0
+start end 1 1
+start end 2 1
+finish: 9 8 5 19 1 20 10 11 18 
+remainingNumbers : 
+vec : 9 8 5 19 1 20 10 11 18 
+size: 1
+start end 1 0
+start end 1 1
+start end 3 1
+start end 4 3
+finish: 8 9 5 1 10 11 18 19 20 
+remainingNumbers : 
+After: 8 9 5 1 10 11 18 19 20 

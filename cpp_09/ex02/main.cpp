@@ -17,6 +17,7 @@ int main(int ac, char* av[]) {
         vectorPm.printNumbers("Before: ");
         vectorPm.mergeInserttionReculsive(1);
         vectorPm.printNumbers("After: ");
+        vectorPm.checkSort();
     } catch (const std::exception& e) {
         std::cerr << e.what();
         return 1;

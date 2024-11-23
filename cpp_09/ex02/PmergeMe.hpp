@@ -25,10 +25,10 @@ public:
     void printNumbers(std::string string);
     void mergeInserttionReculsive(int size);
     void insertElement(int size);
-    void binarySearchInsert(std::vector<int>& a, std::vector<int> tmp, int low, int high, int size);
-    void separateElements(std::vector<int>& a, std::vector<int>& b, int size);
+    void binarySearchInsert(std::vector<std::vector<int> >& a, std::vector<int> tmp, int low, int high, int size);    void separateElements(std::vector<std::vector<int> >& a, std::vector<std::vector<int> >& b, int size);
     void swapMainChainNum(int size);
     void swapVecElements(int indexA, int size);
+    void checkSort();
 };
 
 #endif
