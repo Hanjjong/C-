@@ -16,6 +16,8 @@ private:
     std::deque<int> deq;
     std::vector<int> jacobsthal;
     int numbersSize;
+    PmergeMe(const PmergeMe& obj);
+    PmergeMe& operator=(const PmergeMe& origin);
 
 public:
     PmergeMe(/* args */);

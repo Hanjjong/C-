@@ -1,7 +1,18 @@
 #include "BitcoinExchange.hpp"
 
+BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &origin)
+{
+    if(this != &origin){
+        ;
+    }
+    return (*this);
+}
 
-BitcoinExchange::BitcoinExchange(std::string fname){loadDataBase(fname);}
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& obj) {
+    (void) obj;
+}
+
+BitcoinExchange::BitcoinExchange(std::string fname) { loadDataBase(fname); }
 
 BitcoinExchange::~BitcoinExchange() {}
 

@@ -16,13 +16,12 @@ private:
     float is_valid_value(std::string rate);
     float getExchangeRate(std::string date);
     std::string findClosestDate(std::string date);
+    BitcoinExchange(const BitcoinExchange& obj);
+    BitcoinExchange& operator= (const BitcoinExchange& origin);
 public:
     BitcoinExchange(std::string fname);
     ~BitcoinExchange();
     void processInput(std::string fname);
 };
-
-static std::string trim(const std::string& str);
-static bool isLeapYear(int year);
 
 #endif

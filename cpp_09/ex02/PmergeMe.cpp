@@ -1,7 +1,19 @@
 #include "PmergeMe.hpp"
 
+PmergeMe::PmergeMe(const PmergeMe& obj) {
+    (void) obj;
+}
+
+PmergeMe& PmergeMe::operator=(const PmergeMe& origin){
+       if(this != &origin){
+        ;
+    }
+    return (*this);
+}
+
 PmergeMe::PmergeMe()
 {
+
 }
 
 PmergeMe::~PmergeMe()
